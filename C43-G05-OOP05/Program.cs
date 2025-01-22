@@ -55,34 +55,40 @@ namespace C43_G05_OOP05
     //}
     //#endregion
 
-    #region Question 02-01
+    //#region Question 02-01
 
-    public interface IAuthenticationService
+    //public interface IAuthenticationService
+    //{
+    //    bool AuthenticateUser(string username, string password);
+    //    bool AuthorizeUser(string username, string role);
+    //}
+
+    //public class BasicAuthenticationService : IAuthenticationService
+    //{
+    //    private readonly string _validUsername = "admin";
+
+    //    private readonly string _validPassword = "password123";
+
+    //    private readonly string _validRole = "Admin";
+
+    //    public bool AuthenticateUser(string username, string password)
+    //    {
+    //        return username == _validUsername && password == _validPassword;
+    //    }
+
+    //    public bool AuthorizeUser(string username, string role)
+    //    {
+    //        return username == _validUsername && role == _validRole;
+    //    }
+    //}
+    //#endregion
+
+    #region  Question 03-01
+    public interface INotificationService
     {
-        bool AuthenticateUser(string username, string password);
-        bool AuthorizeUser(string username, string role);
-    }
-
-    public class BasicAuthenticationService : IAuthenticationService
-    {
-        private readonly string _validUsername = "admin";
-
-        private readonly string _validPassword = "password123";
-
-        private readonly string _validRole = "Admin";
-
-        public bool AuthenticateUser(string username, string password)
-        {
-            return username == _validUsername && password == _validPassword;
-        }
-
-        public bool AuthorizeUser(string username, string role)
-        {
-            return username == _validUsername && role == _validRole;
-        }
+        void SendNotification(string recipient, string message);
     }
     #endregion
-
     internal class Program
     {
         static void Main(string[] args)
@@ -107,20 +113,20 @@ namespace C43_G05_OOP05
 
             #region Question 02-02
 
-            IAuthenticationService authService = new BasicAuthenticationService();
-            string username = "admin";
+            //IAuthenticationService authService = new BasicAuthenticationService();
+            //string username = "admin";
 
-            string password = "password123";
+            //string password = "password123";
 
-            if (authService.AuthenticateUser(username, password))
-            {
-                string role = "Admin";
-                Console.WriteLine(authService.AuthorizeUser(username, role) ? "Authorized" : "Not Authorized");
-            }
-            else
-            {
-                Console.WriteLine("Authentication Failed");
-            }
+            //if (authService.AuthenticateUser(username, password))
+            //{
+            //    string role = "Admin";
+            //    Console.WriteLine(authService.AuthorizeUser(username, role) ? "Authorized" : "Not Authorized");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Authentication Failed");
+            //}
 
             #endregion
             Console.ReadKey();
