@@ -83,10 +83,44 @@ namespace C43_G05_OOP05
     //}
     //#endregion
 
-    #region  Question 03-01
+    //#region  Question 03-01
+    //public interface INotificationService
+    //{
+    //    void SendNotification(string recipient, string message);
+    //}
+    //#endregion
+
+    #region Question 03-02
     public interface INotificationService
     {
         void SendNotification(string recipient, string message);
+    }
+    #endregion
+
+    #region تنفيذ الـ INotificationService في الكلاسات
+
+    public class EmailNotificationService : INotificationService
+    {
+        public void SendNotification(string recipient, string message)
+        {
+            Console.WriteLine($"Sending email to {recipient}: {message}");
+        }
+    }
+
+    public class SmsNotificationService : INotificationService
+    {
+        public void SendNotification(string recipient, string message)
+        {
+            Console.WriteLine($"Sending SMS to {recipient}: {message}");
+        }
+    }
+
+    public class PushNotificationService : INotificationService
+    {
+        public void SendNotification(string recipient, string message)
+        {
+            Console.WriteLine($"Sending push notification to {recipient}: {message}");
+        }
     }
     #endregion
     internal class Program
