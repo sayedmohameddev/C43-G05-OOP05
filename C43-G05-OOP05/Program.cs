@@ -93,6 +93,20 @@ namespace C43_G05_OOP05
             //IRectangle rectangle = new Rectangle(4, 7);
             //rectangle.DisplayShapeInfo();
 
+            //IAuthenticationService authService = new BasicAuthenticationService();
+            //string username = "admin";
+
+            //string password = "password123";
+
+            //if (authService.AuthenticateUser(username, password))
+            //{
+            //    string role = "Admin";
+
+            //    Console.WriteLine(authService.AuthorizeUser(username, role));
+            //}
+
+            #region Question 02-02
+
             IAuthenticationService authService = new BasicAuthenticationService();
             string username = "admin";
 
@@ -101,11 +115,14 @@ namespace C43_G05_OOP05
             if (authService.AuthenticateUser(username, password))
             {
                 string role = "Admin";
-
-                Console.WriteLine(authService.AuthorizeUser(username, role));
+                Console.WriteLine(authService.AuthorizeUser(username, role) ? "Authorized" : "Not Authorized");
+            }
+            else
+            {
+                Console.WriteLine("Authentication Failed");
             }
 
-
+            #endregion
             Console.ReadKey();
         }
     }
